@@ -8,6 +8,8 @@ LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope) {
   $scope.message = "";
   $scope.foodlist = "";
+  $scope.style = "";
+  $scope.borderColor = "";
   $scope.checkList = function() {
     $scope.message = parseList($scope.foodlist);
     console.log($scope.foodlist);
@@ -53,6 +55,9 @@ function LunchCheckController($scope) {
     */
     var desiredlist = string.trim().split(',').filter(function(n){ return n.trim() != "" });
     if (desiredlist.length == 0) {
+      // $scope.style = "{'border':'solid 1px black', 'background-color':'#ff0000'}";
+      $scope.borderColor = 'red';
+      // $scope.fontColor = 'blue';
       return "Please enter data first";
     }
     else if (desiredlist.length <= 3) {
