@@ -8,8 +8,8 @@ LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope) {
   $scope.message = "";
   $scope.foodlist = "";
-  $scope.style = "";
-  $scope.borderColor = "";
+  // $scope.style = "";
+  // $scope.borderColor = "";
   $scope.checkList = function() {
     $scope.message = parseList($scope.foodlist);
     console.log($scope.foodlist);
@@ -56,12 +56,12 @@ function LunchCheckController($scope) {
     var desiredlist = string.trim().split(',').filter(function(n){ return n.trim() != "" });
     if (desiredlist.length == 0) {
       // $scope.style = "{'border':'solid 1px black', 'background-color':'#ff0000'}";
-      $scope.borderColor = 'red';
+      // $scope.borderColor = 'red';
       // $scope.fontColor = 'blue';
-      return "Please enter data first";
+      return "Please enter data first!";
     }
     else if (desiredlist.length <= 3) {
-      return "Enjoy";
+      return "Enjoy!";
     }
     else {
       return "Too much!";
@@ -69,27 +69,4 @@ function LunchCheckController($scope) {
   }
 
 }
-
-// .controller('LunchCheckController', function ($scope) {
-//   $scope.name = "";
-//   $scope.totalValue = 0;
-//
-//   $scope.displayNumeric = function () {
-//     var totalNameValue = calculatNumericForString($scope.name);
-//     $scope.totalValue = totalNameValue;
-//   };
-//
-//
-//   function calculatNumericForString(string) {
-//     var totalStringValue = 0;
-//     for (var i = 0; i < string.length; i++) {
-//       totalStringValue += string.charCodeAt(i);
-//     }
-//
-//     return totalStringValue;
-//   }
-//
-// });
-
-
 })();
