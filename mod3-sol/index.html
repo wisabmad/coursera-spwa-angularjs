@@ -9,6 +9,7 @@
     <script src="narrow.module.js"></script>
     <script src="narrow.controller.js"></script>
     <script src="menusearch.service.js"></script>
+    <script src="founditems.component.js"></script>
   </head>
 <body ng-app="NarrowItDownApp">
    <div class="container" ng-controller='NarrowItDownController as narrower'>
@@ -26,7 +27,8 @@
     <items-loader-indicator></items-loader-indicator>
 
     <!-- found-items should be implemented as a component -->
-    <found-items found-items="...." on-remove="...."></found-items>
+    <br><br><br> <!-- understanding styles! you added these 3 breaks and without them list goes over the text box and the Narrow it Down For me button!! have to find more elegant solutio for this not through breaks! -->
+    <found-items found-items="narrower.foundItems" on-remove="narrower.removeItem(index)"></found-items>
   </div>
 
 </body>

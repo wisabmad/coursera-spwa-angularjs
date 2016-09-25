@@ -1,0 +1,10 @@
+<ol>
+  <li ng-repeat="item in $ctrl.foundItems">
+    <!-- name: {{ item.name }}. <br>
+    short name: {{ item.short_name }} <br>
+    description: {{ item.description }} -->
+    {{ item.name }}, {{ item.short_name }}, {{ item.description }}
+    <button ng-click="$ctrl.remove($index);">Don't want this one!</button>
+  </li>
+</ol>
+<div class="error" ng-if="$ctrl.isEmpty()">Nothing found</div>
