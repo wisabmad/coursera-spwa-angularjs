@@ -11,7 +11,7 @@ function MenuSearchService($http) {
     console.log('menusearch service getMatchedMenuItems was called. searchTerm was ', searchTerm);
     return $http({
       method: "GET",
-      url: "http://davids-restaurant.herokuapp.com/menu_items.json",
+      url: "https://davids-restaurant.herokuapp.com/menu_items.json",
     }).then(function (response) {
       var menu_items = response.data.menu_items;
       var foundItems = []
